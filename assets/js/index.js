@@ -7,23 +7,23 @@ const quizQuestions = [
       "variable myVar = 'hello';",
       "let myVar = 'hello';",
     ],
-    answer: "4",
+    answer: 3,
   },
   {
     question: "What is the output of the following code? console.log(3 + '4');",
     choices: ["7", "'7'", "'34'", "12"],
-    answer: "3",
+    answer: 2,
   },
   {
     question: "What is the correct way to write an if statement in JavaScript?",
     choices: ["if (x == 5) {", "if x = 5 {", "if (x === 5)", "if x == 5"],
-    answer: "1",
+    answer: 0,
   },
   {
     question:
       "What is the output of the following code? var arr = [1, 2, 3]; console.log(arr.length);",
     choices: ["0", "1", "2", "3"],
-    answer: "4",
+    answer: 3,
   },
   {
     question: "What is the correct way to write a function in JavaScript?",
@@ -33,7 +33,7 @@ const quizQuestions = [
       "def myFunction() {",
       "let myFunction = function() {",
     ],
-    answer: "1",
+    answer: 0,
   },
 ];
 
@@ -82,25 +82,26 @@ timer.addEventListener("click", startTimer);
 //function to check the user input against the answer array, add either to score or penalize time
 function checkAnswer(index) {
   let currentQuestion = quizQuestions[questionIndex];
+  console.log(currentQuestion.answer);
   if (currentQuestion.answer === index) {
     score++;
   } else {
     timerCount = timerCount - timerPenalty; //takes 10 seconds off for wrong answer
   }
   questionIndex++;
-  if (questionIndex < quizArray.length) {
+  if (questionIndex < quizQuestions.length) {
     renderQuestions();
   } else {
     endQuiz();
   }
 }
 
-// Function to render questions/options as buttons
+// Function to render questions/choices as buttons
 function renderQuestions() {
-  let currentQuestion = quizArray[questionIndex];
+  let currentQuestion = quizQuestions[questionIndex];
   questionText.textContent = currentQuestion.question;
-  for (var i = 0; i < currentQuestion.options.length; i++) {
-    var choice = currentQuestion.options[i];
+  for (var i = 0; i < currentQuestion.choices.length; i++) {
+    var choice = currentQuestion.choices[i];
     let buttonEl = document.getElementById("button" + i);
     buttonEl.textContent = choice;
   }

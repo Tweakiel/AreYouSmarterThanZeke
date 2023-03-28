@@ -6,6 +6,118 @@ body {
     display: none !important;  /* if there are 2 competing, this will take precedence */
 }
 
+/* Centering all sections */
+section, #high-scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Introduction section */
+  #introduction {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #introduction h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  #introduction p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .start-button {
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .start-button:hover {
+    background-color: rgb(135, 218, 218);
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .start-button:active {
+    font-size: 180%;
+    box-shadow: 0 0 10px #000 inset;
+  }
+  
+  /* Question section */
+  #questionArea {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #questionText {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .buttonList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .choiceButton {
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .choiceButton:hover {
+    background-color: rgb(135, 218, 218);
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .choiceButton:active {
+    font-size: 180%;
+    box-shadow: 0 0 10px #000 inset;
+  }
+  
+  /* Timer section */
+  .current-time {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  /* High Scores section */
+  #high-scores {
+    flex-direction: column;
+  }
+  
+  #high-scores form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #high-scores label {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
 #introduction, #questionArea, #final-score {
     position: absolute;
     left: 30%;
@@ -55,11 +167,7 @@ body {
     margin-left: 20px;
     margin-bottom: 10px;
 }
-/*The user is hovering over the button element*/
-.choiceButton:hover, .start-button:hover, #reset-button:hover, #submit-button:hover{
-    background-color: rgb(135, 218, 218);
-    color: #fff;
-}
+
   
   /* The user is actively pressing down on the button element */
   .choiceButton:active, .start-button:active, #reset-button:active, #submit-button:active {
