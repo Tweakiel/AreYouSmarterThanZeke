@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Code Quiz!</title>
+  </head>
+
+  <body>
+    <!-- Introduction, originally hidden -->
+    <section id="introduction">
+      <h1>Coding Quiz Challenge!</h1>
+      <p>
+        Try to answer the following 5 questions code-related questions within
+        the time limit. Keep in mind that incorrect answers will penalize your
+        time by 10 seconds!
+      </p>
+      <!-- Start button to begin quiz -->
+      <button class="start-button">Start</button>
+    </section>
+
+    <!-- Timer for the quiz -->
+    <div class="current-time"></div>
+
+    <!-- Section for Quiz questions & answer buttons  -->
+    <section id="questionArea" class="hide">
+      <h2 id="questionText"></h2>
+      <ul class="buttonList">
+        <li>
+          <button
+            id="button0"
+            class="choiceButton"
+            onclick="checkAnswer(0)"
+          ></button>
+        </li>
+        <li>
+          <button
+            id="button1"
+            class="choiceButton"
+            onclick="checkAnswer(1)"
+          ></button>
+        </li>
+        <li>
+          <button
+            id="button2"
+            class="choiceButton"
+            onclick="checkAnswer(2)"
+          ></button>
+        </li>
+        <li>
+          <button
+            id="button3"
+            class="choiceButton"
+            onclick="checkAnswer(3)"
+          ></button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- High Scores section  -->
+
+    <div id="final-score" class="hide"></div>
+    <!-- css this -->
+
+    <div id="high-scores" class="hide">
+      <!-- css this -->
+      <form>
+        <label for="initials">Please enter your initials:</label>
+        <input type="text" id="initials" name="initials" /><br /><br />
+      </form>
+
+      <button id="submit-button" onclick="addNewScore()">Submit</button>
+      <ol id="score-list"></ol>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
